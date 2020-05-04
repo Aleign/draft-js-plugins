@@ -36,7 +36,7 @@ export default (
 ) => {
   //eslint-disable-line
   const MENTION_REGEX = supportWhiteSpace
-    ? new RegExp(`${escapeRegExp(trigger)}(${regExp}|\\s){0,}`, 'g')
+    ? new RegExp(`(\\s|^)${escapeRegExp(trigger)}(${regExp}|\\s){0,}`, 'g')
     : new RegExp(`(\\s|^)${escapeRegExp(trigger)}${regExp}`, 'g');
 
   return (contentBlock: Object, callback: Function) => {
